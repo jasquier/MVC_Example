@@ -1,0 +1,7 @@
+Hey this is my first attempt at creating a new file, Github is simple.... right?
+Anyways, to use Github you first create a repository
+Then you branch off of the master branch
+Here in your branch you can create and edit all the files you want
+Then you submit a pull request where those files can be reviewed
+After reviewing a pull reques a user can chose to merge the branch with master
+Then you can delete the branch if you want, all the new info is in the main branch!
