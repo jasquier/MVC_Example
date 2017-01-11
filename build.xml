@@ -1,0 +1,38 @@
+<!-- This is the build.xml file for my MVC example program -->
+<!-- Creator: John Squier -->
+
+<project name="MvcExample" default="run" basedir=".">
+
+  <!-- Global properties for this project -->
+  <property name="src" location="src"/>
+  <property name="classes" location="classes"/>
+  <property name="dist" location="dist"/>
+  
+  <!-- Compile the source files in src/ and store in classes/ -->
+  <target name="compile"> 
+    <mkdir dir="${classes}"/>
+    <javac srcdir="${src}" destdir="${classes}"/>
+  </target>
+  
+  <!-- Create a jar file containing the compiled classes -->
+  <target name="dist" depends="compile">
+    <mkdir dir="${dist}"/>
+    <jar jarfile="${dist}/MvcExample.jar" basedir="${classes}">
+      <manifest>
+	<attribute name="Main-Class" value="MvcExampleDriver"/>
+      </manifest>
+    </jar>
+  </target>
+
+  <!-- Run the jar file -->
+  <target name="run" depends="dist" description="">
+    <java jar="dist/MvcExample.jar" fork="true"/>
+  </target>
+
+  <!-- Remove all .class and .jar files -->
+  <target name="clean" description="">
+    <delete dir="${classes}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+</project>
